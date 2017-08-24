@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="main.css">
+	<title>Flooded Forever</title>
+</head>
+<body data-bind="css: rows[0][0].color">
+<table>
+	<tbody data-bind="foreach: rows">
+		<tr data-bind="foreach: $data">
+			<td data-bind="css: color, click: flood">&nbsp;</td>
+		</tr>
+	</tbody>
+</table>
+
+<div id="bar">
+	<div id="count" data-bind="css: { bad: moveCount > expected }">
+		<span data-bind="text: moveCount"></span>
+		/
+		<span data-bind="text: expected"></span>
+	</div>
+	<div id="controls">
+		<a href="#" data-bind="click: askAboutReset">
+			<img src="restart.png">
+		</a>
+	</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/knockout-es5/0.4.6/knockout-es5.min.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
